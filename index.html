@@ -576,5 +576,11 @@
     // Update Swiper after all images are loaded
     window.addEventListener("load", () => {
         swiper.update();
+
+        //event listener for nav
+        $("li.nav-item").click(function() {
+    $("li.nav-item").removeClass('active')
+    $(this).addClass("active"); 
+  });
     });
 </script>

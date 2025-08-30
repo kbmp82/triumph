@@ -190,6 +190,13 @@ div#navbar.show ul.navbar-nav {
     z-index: -1;
   }
 
+  .nav-item.active,
+  .nav-item:hover {
+    background-color: #eb3300cc;
+    border-radius: 2rem;
+    transition: background-color 0.1s ease-in;
+  }
+
   .swiper-slide {
     max-width: 240px;
   }
