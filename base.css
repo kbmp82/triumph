@@ -189,7 +189,7 @@ div#navbar.show ul.navbar-nav {
     background-color: rgba(255, 255, 255, 0.25) !important;
     z-index: -1;
   }
-
+  /* nav animation effect */
   .nav-item.active,
   .nav-item:hover {
     background-color: #eb3300cc;
