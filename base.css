@@ -190,10 +190,15 @@ div#navbar.show ul.navbar-nav {
     z-index: -1;
   }
   /* nav animation effect */
-  .nav-item.active,
-  .nav-item:hover {
-    background-color: #eb3300cc;
-    border-radius: 2rem;
+  .nav-item.active a {
+    color: #c2c1c1cc !important;
+    text-underline-offset: 4px;
+    text-decoration: underline;
+    transition: text-decoration 0.1s ease-in;
+  }
+
+  .nav-item:hover a {
+    color: #c2c1c1cc !important;
     transition: background-color 0.1s ease-in;
   }
 
