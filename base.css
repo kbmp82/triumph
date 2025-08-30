@@ -1,0 +1,255 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --rock-color--red: #eb3300;
+  --rock-color--brown: #2e2320;
+}
+
+.rock-red {
+  color: var(--rock-color--red);
+}
+
+.rock-bg-red {
+  background-color: var(--rock-color--red);
+}
+
+.rock-bg-red-hover:hover {
+  border: 3px solid var(--rock-color--red);
+  color: white !important;
+}
+
+.rock-bg-brown {
+  background-color: var(--rock-color--brown);
+}
+
+.rock-bg-brown-hover:hover {
+  border: 3px solid var(--rock-color--brown);
+  color: var(--rock-color--brown) !important;
+}
+
+.rock-bg-brown-inverted {
+  border: 2px solid var(--rock-color--brown);
+  color: var(--rock-color--brown) !important;
+}
+
+.rock-bg-brown-inverted-hover:hover {
+  background-color: var(--rock-color--brown);
+  color: white !important;
+}
+
+header .logo {
+  max-width: 150px;
+}
+
+div#navbar.show ul.navbar-nav {
+  background-color: var(--rock-color--red) !important;
+  opacity: 0.9 !important;
+}
+
+#hero {
+  height: 100vh;
+  max-height: 975px;
+}
+
+.fs-80 {
+  font-size: clamp(2rem, 7vw, 5rem);
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.btn-custom--pink {
+  backdrop-filter: blur(150px);
+  border-style: inset;
+  border: 2px rgba(255, 255, 255, 0.4) solid;
+}
+
+.btn-custom--white:hover {
+  color: rgba(112, 106, 110, 1) !important;
+  backdrop-filter: blur(150px);
+}
+
+.section-spacing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+#our_mission::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-color: #ff2300;
+  z-index: -1;
+  opacity: 75%;
+}
+
+#plan_visit:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 80px;
+  background-image: url("./images/Mask\ group.jpg");
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.mission-card {
+  max-width: 385px;
+}
+
+.lh-1-3 {
+  line-height: 1.3 !important;
+}
+
+.divider {
+  width: 50px;
+  background: black;
+  height: 5px;
+  top: 2rem;
+}
+
+.divider.divider-right {
+  transform: rotate(90deg);
+  top: 32%;
+}
+
+#plan_visit {
+  overflow: hidden;
+}
+.slide-content img {
+  height: 467px !important;
+  min-width: 240px;
+}
+
+.swiper {
+  overflow: visible;
+}
+
+.swiper-pagination-bullet {
+  width: 30px;
+  height: 5px;
+  border-radius: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--rock-color--red);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, -30px);
+}
+
+#story .col-11.d-flex > div:nth-child(1),
+#story .col-11.d-flex > div:nth-child(2),
+#story .col-11.d-flex > div:nth-child(3) {
+  max-width: 100%;
+}
+
+.footer-nav-heading {
+  color: #828282;
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+.privacy-links {
+  font-size: 0.8rem;
+}
+
+.privacy-links a:before {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 2px;
+  background-color: #828282;
+  left: -8px;
+  top: 3px;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 350px) {
+  header .logo {
+    max-width: 100px;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  ul.navbar-nav,
+  div#navbar.show ul.navbar-nav {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    z-index: -1;
+  }
+
+  .swiper-slide {
+    max-width: 240px;
+  }
+
+  header .logo {
+    max-width: 225px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 60px;
+  }
+
+  #story .col-11.d-flex > div:nth-child(2) img {
+    max-width: 489px;
+    max-height: 458px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #story .col-11.d-flex > div:nth-child(3) img {
+    height: 194px;
+    max-width: 207px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .create-account-desktop {
+    min-width: 226px;
+  }
+
+  #story .col-11.d-flex > div:nth-child(1) {
+    max-width: 40%;
+  }
+  #story .col-11.d-flex > div:nth-child(2) {
+    max-width: 40%;
+  }
+  #story .col-11.d-flex > div:nth-child(3) {
+    max-width: 20%;
+  }
+
+  #story .col-11.d-flex > div:nth-child(2) img {
+    max-width: 489px;
+    max-height: 458px;
+    height: 100%;
+    object-fit: cover;
+  }
+  #story .col-11.d-flex > div:nth-child(3) img {
+    height: 194px;
+    max-width: 207px;
+    object-fit: cover;
+  }
+
+  section#footer .social {
+    border: 1px solid black;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+}
