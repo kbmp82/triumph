@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="base.css" />
 </head>
 
@@ -31,35 +34,36 @@
         <header class="position-absolute top-0 w-100 px-3 py-2 px-lg-3 py-lg-4 px-xl-5">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand w-auto me-0" href="#">
-                    <img class="img-fluid logo" src="./images/Frame 2430.svg"
-                        alt="logo" /></a>
+                    <img class="img-fluid logo" src="./images/Frame 2430.svg" alt="logo" /></a>
                 <div class="d-flex align-items-center gap-2 order-lg-3">
-                    <a class="nav-link text-white d-lg-none bg-white rounded-5 ms-3 bg-opacity-25 p-1 px-3"
-                        href="#">Give Online</a>
+                    <button data-toggle="modal" data-target="#giveOnlineModal"
+                        class="nav-link text-white d-lg-none bg-white rounded-5 ms-3 bg-opacity-25 p-1 px-3"
+                        href="#">Give Online</button>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="order-lg-4 gap-2 d-none d-lg-block create-account-desktop">
-                    <a class="text-white text-decoration-none d-flex gap-1 align-items-center justify-content-end"
-                        href="#">
+                    <button
+                        class="text-white text-decoration-none d-flex gap-1 align-items-center bg-transparent border-0"
+                        data-toggle="modal" data-target="#createAccount">
                         <img src="images/Frame.svg" alt="account icon" /> Create
-                        Account</a>
+                        Account</button>
                 </div>
                 <div class="collapse navbar-collapse justify-content-center z-3" id="navbar">
                     <ul class="navbar-nav text-white rounded-5 p-4 p-lg-1">
                         <li class="nav-item active">
-                            <a class="nav-link text-white" href="#">Plan A Visit</a>
+                            <a class="nav-link text-white" href="#plan_visit">Plan A Visit</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Who We Are</a>
+                            <a class="nav-link text-white" href="#our_mission">Who We Are</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Connect</a>
+                            <a class="nav-link text-white" href="#footer">Connect</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Ministries</a>
+                            <a class="nav-link text-white" href="#plan_visit">Ministries</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Events</a>
@@ -68,27 +72,31 @@
                             <a class="nav-link text-white" href="#">Media</a>
                         </li>
                         <li class="nav-item d-none d-lg-block bg-white rounded-5 ms-3 bg-opacity-25 px-2">
-                            <a class="nav-link text-white" href="#">Give Online</a>
+                            <button type="button" data-toggle="modal" data-target="#giveOnlineModal"
+                                class="nav-link text-white">Give Online</button>
                         </li>
-                        <li class="nav-item d-lg-none mt-5">
-                            <a class="text-white text-decoration-none d-flex gap-1 align-items-center" href="#">
+                        <li class="nav-item d-lg-none mt-5 create-account-mobile">
+                            <button
+                                class="text-white bg-transparent border-0 text-decoration-none d-flex gap-1 align-items-center"
+                                data-toggle="modal" data-target="#createAccount">
                                 <img src="images/Frame.svg" alt="account icon" /> Create
-                                Account</a>
+                                Account</button>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
         <div class="row hero-text text-white text-center justify-content-center px-2 px-sm-5">
-            <h1 class="fw-bold fs-80 col-12">We're Glad You're Here</h1>
+            <h1 class="hero-heading fw-bold fs-80 col-12">We're Glad You're Here</h1>
             <p class="fs-2 col-lg-6 lh-1 fw-medium">
                 We are a thriving and diverse community of real poeple experience real
                 life together.
             </p>
             <div class="d-flex gap-3 justify-content-center mt-3">
-                <a class="btn bg-white px-3 py-2 fw-bold text-black btn-custom--white" href="#" role="button">Plan a
+                <a class="btn bg-white px-3 py-2 fw-bold text-black btn-custom--white" href="#plan_visit"
+                    role="button">Plan a
                     Visit</a>
-                <a class="btn bg-white bg-opacity-25 py-2 text-white fw-bold btn-custom--pink" href="#"
+                <a class="btn bg-white bg-opacity-25 py-2 text-white fw-bold btn-custom--pink" href="#our_mission"
                     role="button">About Us</a>
             </div>
         </div>
@@ -96,21 +104,22 @@
             <div class="col-12 col-lg-4"></div>
             <div class="col-12 col-lg-4">
                 <p class="text-white text-center fs-5">
-                    Next Service Starts In:<br /><span class="fw-bold">00:00:00</span>
+                    Next Service Starts In:<br /><span id="serviceTimer" class="fw-bold d-block px-3"></span>
                 </p>
             </div>
             <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end pe-lg-5 gap-4">
-                <a href="https://facebook.com" target="_blank"><img class="img-fluid" src="./images/facebook-f.svg"
-                        alt="Facebook" /><span class="visually-hidden">Visit our Facebook
+                <a class="social-icon" href="https://facebook.com" target="_blank"><img class="img-fluid social-icon"
+                        src="./images/facebook-f.svg" alt="Facebook" /><span class="visually-hidden">Visit our Facebook
                         channel (opens in new tab)</span></a>
-                <a href="https://x.com" target="_blank"><img class="img-fluid" src="./images/x-twitter 2.svg"
-                        alt="X" /><span class="visually-hidden">Visit our X channel (opens in new
+                <a class="social-icon" href="https://x.com" target="_blank"><img class="img-fluid"
+                        src="./images/x-twitter 2.svg" alt="X" /><span class="visually-hidden">Visit our X channel
+                        (opens in new
                         tab)</span></a>
-                <a href="https://instagram.com" target="_blank"><img class="img-fluid" src="./images/instagram.svg"
-                        alt="Instagram" /><span class="visually-hidden">Visit our Instagram
+                <a class="social-icon" href="https://instagram.com" target="_blank"><img class="img-fluid"
+                        src="./images/instagram.svg" alt="Instagram" /><span class="visually-hidden">Visit our Instagram
                         channel (opens in new tab)</span></a>
-                <a href="https://youtube.com" target="_blank"><img class="img-fluid" src="./images/Youtube.svg"
-                        alt="Youtube" /><span class="visually-hidden">Visit our YouTube
+                <a class="social-icon" href="https://youtube.com" target="_blank"><img class="img-fluid"
+                        src="./images/Youtube.svg" alt="Youtube" /><span class="visually-hidden">Visit our YouTube
                         channel (opens in new tab)</span></a>
             </div>
         </div>
@@ -120,7 +129,7 @@
             <div class="row mb-3 justify-content-center">
                 <div class="col-11">
                     <div class="row">
-                        <div class="col-12 col-lg-5">
+                        <div class="col-12 col-lg-5 scroll-animation" data-animate="animate__fadeInLeft">
                             <p class="text-secondary fw-bold text-uppercase">
                                 Welcome to Rock Solid
                             </p>
@@ -129,7 +138,8 @@
                                 disciple-making disciples.
                             </p>
                         </div>
-                        <div class="col-12 col-lg-4 offset-lg-3 mt-auto">
+                        <div class="col-12 col-lg-4 offset-lg-3 mt-auto scroll-animation"
+                            data-animate="animate__fadeInRight">
                             <p>
                                 Rock Solid Church is committed to creating a movement of
                                 disciple-making disciples—men and women who reflect the
@@ -153,8 +163,11 @@
             </div>
         </div>
     </section>
-    <section id="our_mission" class="position-relative section-spacing pb-0 rounded-4 overflow-hidden">
-        <img class="w-100 h-100 object-fit-cover position-absolute top-0 start-0 z-n1" srcset="
+    <section id="our_mission" class="position-relative section-spacing pb-0 rounded-4 overflow-visible">
+                <img class="arrow" src="./images/arrow.svg" alt="" />
+                <img class="half-circle" src="./images/half-cirlce.svg" alt="" />
+        </div>
+        <img class="w-100 h-100 object-fit-cover position-absolute top-0 start-0 z-n1 rounded-4" srcset="
           ./images/sand-400w.webp   400w,
           ./images/sand-600w.webp   600w,
           ./images/sand-800w.webp   800w,
@@ -166,20 +179,22 @@
             src="./images/sand.jpg" alt="" loading="lazy" style="filter: grayscale(0.5) brightness(0.9)" />
         <div class="container-sm">
             <div class="row justify-content-center">
-                <div class="col-12 text-center text-white">
-                    <h1 class="fw-bold">Our Mission is Simple</h1>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-5 text-center">
-                        <p class="text-white">
-                            The gospel is the good news of Jesus: That Jesus lived a sinless
-                            life in my place, died the death that
-                        </p>
+                <div class="scroll-animation" data-animate="animate__fadeInUp">
+                    <div class="col-12 text-center text-white">
+                        <h1 class="fw-bold">Our Mission is Simple</h1>
+                    </div>
+                    <div class="row justify-content-center ">
+                        <div class="col-12 col-lg-5 text-center">
+                            <p class="text-white">
+                                The gospel is the good news of Jesus: That Jesus lived a sinless
+                                life in my place, died the death that
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row gap-4 justify-content-center mt-4 pb-5">
-                    <div
-                        class="mission-card col-lg-4 p-3 text-center bg-white rounded-4 d-flex flex-column align-items-center justify-content-between">
+                    <div class="mission-card col-lg-3 p-3 text-center bg-white rounded-4 d-flex flex-column align-items-center justify-content-between scroll-animation"
+                        data-animate="animate__fadeInLeft">
                         <img src="./images/Group 1678.svg" alt="" width="115" />
                         <p class="fw-bold fs-4 pt-3">Watch a Message</p>
                         <p>
@@ -189,7 +204,7 @@
                         <a class="rock-red text-decoration-none fw-bold" href="#">Catch Our Latest Message</a>
                     </div>
                     <div
-                        class="mission-card col-lg-4 p-3 text-center bg-white rounded-4 d-flex flex-column align-items-center justify-content-between">
+                        class="mission-card col-lg-3 p-3 text-center bg-white rounded-4 d-flex flex-column align-items-center justify-content-between">
                         <img src="./images/Group 1678.svg" alt="" width="115" />
                         <p class="fw-bold fs-4 pt-3">Find a Location</p>
                         <p>
@@ -198,15 +213,15 @@
                         </p>
                         <a class="rock-red text-decoration-none fw-bold" href="#">Search Our Campuses</a>
                     </div>
-                    <div
-                        class="mission-card col-lg-4 p-3 text-center bg-white rounded-4 d-flex flex-column align-items-center justify-content-between">
+                    <div class="mission-card col-lg-3 p-3 text-center bg-white rounded-4 d-flex flex-column align-items-center justify-content-between scroll-animation"
+                        data-animate="animate__fadeInRight">
                         <img src="./images/Group 1678.svg" alt="" width="115" />
                         <p class="fw-bold fs-4 pt-3">Get Connected</p>
                         <p>
                             Stay connected and in the loop—sign up for updates, events, and
                             ways to get involved.
                         </p>
-                        <a class="rock-red text-decoration-none fw-bold" href="#">Contact Us</a>
+                        <a class="rock-red text-decoration-none fw-bold" href="#footer">Contact Us</a>
                     </div>
                 </div>
                 <div class="row px-lg-5 pt-5 justify-content-center">
@@ -247,9 +262,10 @@
         </div>
     </section>
     <section id="plan_visit" class="position-relative section-spacing mt-5">
-        <div class="divider position-absolute start-0 ms-3"></div>
-        <div class="divider divider-right position-absolute end-0 ms-3"></div>
-        <div class="container-sm">
+        <div class="divider position-absolute start-0 ms-3 scroll-animation" data-animate="animate__bounceInRight"></div>
+        <div class="divider divider-right position-absolute ms-3 scroll-animation" data-animate="animate__bounceInDown">
+        </div>
+        <div class="container-sm scroll-animation" data-animate="animate__fadeInUp">
             <div class="row justify-content-center">
                 <div class="col-lg-7 text-center px-lg-5">
                     <h1 class="fw-800 text-uppercase">
@@ -257,8 +273,8 @@
                         <span class="rock-red">love</span>
                         <span class="text-secondary">and Hope to the entire world.</span>
                     </h1>
-                    <a class="btn px-3 py-2 fw-bold text-white rock-bg-brown rock-bg-brown-hover mt-3" href="#"
-                        role="button">Plan a Visit</a>
+                    <a class="btn px-3 py-2 fw-bold text-white rock-bg-brown rock-bg-brown-hover mt-3"
+                        href="#plan_visit" role="button">Plan a Visit</a>
                 </div>
             </div>
             <div class="row justify-content-center mt-5 pt-5">
@@ -276,119 +292,120 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <!-- Slider main container -->
-                    <div class="swiper">
+                    <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                         <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper justify-content-center">
-                            <!-- slide 1-->
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                        <div class="splide__track justify-content-center">
+                            <ul class="splide__list">
+                                <!-- slide 1-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid" srcset="
                         ./images/image-(3)-400w.webp   400w,
                         ./images/image-(3)-600w.webp   600w,
                         ./images/image-(3)-800w.webp   800w,
                         ./images/image-(3)-1000w.webp 1000w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (min-width: 801px) 1000px"
-                                        src="./images/image-(3).png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Prayer & Care</h6>
+                                            src="./images/image-(3).png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Prayer & Care</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- slide 2-->
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                                </li>
+                                <!-- slide 2-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid" srcset="
                         ./images/image4-400w.webp   400w,
                         ./images/image4-600w.webp   600w,
                         ./images/image4-800w.webp   800w,
                         ./images/image4-1000w.webp 1000w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (min-width: 801px) 1000px"
-                                        src="./images/image4.png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Kids</h6>
+                                            src="./images/image4.png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Kids</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                                </li>
+                                <!-- slide 3-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid" srcset="
                         ./images/image5-400w.webp   400w,
                         ./images/image5-600w.webp   600w,
                         ./images/image5-800w.webp   800w,
                         ./images/image5-1000w.webp 1000w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (min-width: 801px) 1000px"
-                                        src="./images/image5.png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Students</h6>
+                                            src="./images/image5.png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Students</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- slide 3-->
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                                </li>
+                                <!-- slide 4-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid" srcset="
                         ./images/image2-400w.webp   400w,
                         ./images/image2-600w.webp   600w,
                         ./images/image2-800w.webp   800w,
                         ./images/image2-1000w.webp 1000w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (min-width: 801px) 1000px"
-                                        src="./images/image2.png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Worship</h6>
+                                            src="./images/image2.png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Worship</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- slide 4-->
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                                </li>
+                                <!-- slide 5-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid" srcset="
                         ./images/image7-400w.webp   400w,
                         ./images/image7-600w.webp   600w,
                         ./images/image7-800w.webp   800w,
                         ./images/image7-1000w.webp 1000w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (min-width: 801px) 1000px"
-                                        src="./images/image7.png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Men</h6>
+                                            src="./images/image7.png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Men</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- slide 5-->
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                                </li>
+                                <!-- slide 6-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid" srcset="
                         ./images/image8-400w.webp   400w,
                         ./images/image8-600w.webp   600w,
                         ./images/image8-800w.webp   800w,
                         ./images/image8-1000w.webp 1000w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (min-width: 1201px) 1600px"
-                                        src="./images/image8.png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Women</h6>
+                                            src="./images/image8.png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Women</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- slide 6-->
-                            <div class="swiper-slide">
-                                <div class="slide-content">
-                                    <img class="object-fit-cover rounded-4 img-fluid" srcset="
+                                </li>
+                                <!-- slide 7-->
+                                <li class="splide__slide">
+                                    <div class="slide-content">
+                                        <img class="object-fit-cover rounded-4 img-fluid " srcset="
                         ./images/image9-400w.webp 400w,
                         ./images/image9-600w.webp 600w,
                         ./images/image9-800w.webp 800w
                       " sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (min-width: 601px) 800px"
-                                        src="./images/image9.png" alt="" />
-                                    <div class="pt-3">
-                                        <h6 class="fw-bold">Small Groups</h6>
+                                            src="./images/image9.png" alt="" />
+                                        <div class="pt-3">
+                                            <h6 class="fw-bold">Small Groups</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <section id="story" class="rounded-4 rock-bg-brown py-5">
         <div class="container-sm py-3">
@@ -404,7 +421,7 @@
                             role="button">Share Your Story</a>
                     </div>
 
-                    <div>
+                    <div class="scroll-animation" data-animate="animate__fadeInLeft">
                         <img class="img-fluid rounded-4 w-100" srcset="
                   ./images/image10-400w.webp   400w,
                   ./images/image10-600w.webp   600w,
@@ -416,7 +433,7 @@
                             <u>Joshua’s Road to Peace</u>
                         </p>
                     </div>
-                    <div class="">
+                    <div class="scroll-animation" data-animate="animate__fadeInRight">
                         <div class="pb-5 pb-xl-0">
                             <img class="img-fluid rounded-4 w-100" srcset="
                     ./images/image11-400w.webp 400w,
@@ -451,17 +468,19 @@
                             <p>11340 W. Bell Road, Suite 200</br>Surprise, AZ 85378</p>
                             <p>(000) 000-0000</p>
                             <div class="d-flex gap-4">
-                                <a class="social" href="https://facebook.com" target="_blank"><img class="img-fluid"
-                                        src="./images/facebook-f.svg" alt="Facebook" style="filter: invert(1)" /><span
-                                        class="visually-hidden">Visit our Facebook channel (opens in new tab)</span></a>
-                                <a class="social" href="https://x.com" target="_blank"><img class="img-fluid"
+                                <a class="social-icon" href="https://facebook.com" target="_blank"><img
+                                        class="img-fluid" src="./images/facebook-f.svg" alt="Facebook"
+                                        style="filter: invert(1)" /><span class="visually-hidden">Visit our Facebook
+                                        channel (opens in new tab)</span></a>
+                                <a class="social-icon" href="https://x.com" target="_blank"><img class="img-fluid"
                                         src="./images/x-twitter 2.svg" alt="X" style="filter: invert(1)" /><span
                                         class="visually-hidden">Visit our X channel (opens in new tab)</span></a>
-                                <a class="social" href="https://instagram.com" target="_blank"><img class="img-fluid"
-                                        src="./images/instagram.svg" alt="Instagram" style="filter: invert(1)" /><span
-                                        class="visually-hidden">Visit our Instagram channel (opens in new
+                                <a class="social-icon" href="https://instagram.com" target="_blank"><img
+                                        class="img-fluid" src="./images/instagram.svg" alt="Instagram"
+                                        style="filter: invert(1)" /><span class="visually-hidden">Visit our Instagram
+                                        channel (opens in new
                                         tab)</span></a>
-                                <a class="social" href="https://youtube.com" target="_blank"><img class="img-fluid"
+                                <a class="social-icon" href="https://youtube.com" target="_blank"><img class="img-fluid"
                                         src="./images/Youtube.svg" alt="Youtube" style="filter: invert(1)" /><span
                                         class="visually-hidden">Visit our YouTube channel (opens in new tab)</span></a>
                             </div>
@@ -470,13 +489,13 @@
                             <div class="row">
                                 <div class="d-flex justify-content-lg-end gap-3 mt-5 mt-lg-0">
                                     <a class="btn px-3 py-2 text-uppercase fw-bold text-white rock-bg-brown rock-bg-brown-hover mt-3"
-                                        href="#" role="button">Plan a Visit</a>
+                                        href="#plan_visit" role="button">Plan a Visit</a>
                                     <a class="btn px-3 py-2 fw-bold rock-bg-brown-inverted rock-bg-brown-inverted-hover mt-3"
                                         href="#" role="button">Login</a>
                                 </div>
                             </div>
 
-                            <div class="row mt-5 justify-content-end">
+                            <div class="row mt-5 justify-content-start justify-content-lg-end">
                                 <div class="col-md-4 col-6">
                                     <h5 class="footer-nav-heading pb-2 text-uppercase fw-bold">Quick Links</h5>
                                     <ul class="list-unstyled list">
@@ -496,7 +515,8 @@
                                 <div class="col-md-4 col-6">
                                     <h5 class="footer-nav-heading pb-2 text-uppercase fw-bold">Get In Touch</h5>
                                     <ul class="list-unstyled list">
-                                        <li class="pb-2"><a class="text-body text-decoration-none" href="#">Plan a Visit
+                                        <li class="pb-2"><a class="text-body text-decoration-none"
+                                                href="#plan_visit">Plan a Visit
                                                 Request</a></li>
                                         <li class="pb-2"><a class="text-body text-decoration-none" href="#">Prayer</a>
                                         </li>
@@ -523,6 +543,91 @@
             </div>
         </div>
     </section>
+    <!-- donation modal-->
+    <div class="modal fade" id="giveOnlineModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-secondary text-uppercase mb-0">Give Online</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2 class="fw-medium">Support Our Ministry</h2>
+                    <p>Your generous contributions help us continue our mission of serving our community and spreading
+                        God's love. Through your support, we're able to maintain our facilities, fund outreach programs,
+                        support local families in need, and expand our ministry efforts.</p>
+                    <p>Online giving is a secure and convenient way to contribute to our church family. You can make a
+                        one-time donation or set up recurring gifts to support our ongoing work. Every gift, no matter
+                        the size, makes a meaningful difference in the lives we touch.
+                        Thank you for partnering with us in faith and generosity</p>
+                    <div>
+                        <p class="">Questions about giving? Contact our office at <a
+                                class="text-decoration-none rock-red" href="tel:+10000000000"
+                                target="_blank">(000)-000-0000</a> or <a class="text-decoration-none rock-red"
+                                href="emailto:support@rocksolidchurch.com"
+                                target="_blank">support@rocksolidchurch.com</a></p>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn px-3 py-2 fw-bold text-white btn-secondary"
+                        data-dismiss="modal">Close</button>
+                    <button type="button"
+                        class="btn px-3 py-2 fw-bold text-white rock-bg-red rock-bg-red-hover inverse-text"
+                        data-dismiss="modal">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- create account modal-->
+    <div class="modal fade" id="createAccount">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-secondary text-uppercase mb-0">Create An Account</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2 class="fw-medium">Register</h2>
+                    <form>
+                        <div class="row g-2">
+                            <div class="col-12 col-md-6">
+                                <label for="fname">First name:</label><br>
+                                <input type="text" id="fname" name="fname"><br>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="lname">Last name:</label><br>
+                                <input type="text" id="lname" name="lname">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="email">Email:</label><br>
+                                <input class="w-100" type="text" id="email" name="email">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="phone">Phone:</label><br>
+                                <input class="w-100" type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="password">Password:</label><br>
+                                <input class="w-100" type="password" id="password" name="password">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="conf_password">Confirm Password:</label><br>
+                                <input class="w-100" type="password" id="conf_password" name="conf_password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn px-3 py-2 fw-bold text-white btn-secondary"
+                        data-dismiss="modal">Close</button>
+                    <button type="button"
+                        class="btn px-3 py-2 fw-bold text-white rock-bg-red rock-bg-red-hover inverse-text"
+                        data-dismiss="modal">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -532,55 +637,90 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 </body>
 
 </html>
 <script>
-    const swiper = new Swiper(".swiper", {
-        loop: true,
-        // Wait for images to load
-        watchSlidesProgress: true,
-        watchSlidesVisibility: true,
-
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-
-        // Update on window resize
-        observer: true,
-        observeParents: true,
-        breakpoints: {
-            // Mobile: full width slides
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                centeredSlides: false,
-            },
-            // Small tablets
-            576: {
-                slidesPerView: "auto",
-                spaceBetween: 15,
-                centeredSlides: false,
-            },
-            // Desktop
-            768: {
-                slidesPerView: "auto",
-                spaceBetween: 20,
-                centeredSlides: false,
-            },
-        },
-    });
-
-    // Update Swiper after all images are loaded
     window.addEventListener("load", () => {
-        swiper.update();
 
+        const splide = new Splide('.splide', {
+            type: 'loop',
+            autoplay: true,
+            interval: 2000,
+            width: '100%',
+            fixedWidth: '18rem',
+            fixedHeight: '30rem',
+            padding: '10rem',
+            snap: true,
+            focus: 'center',
+            pagination: true,
+            lazyLoad: 'nearby',
+            preloadPages: 2,
+        }).mount();
         //event listener for nav
-        $("li.nav-item").click(function() {
-    $("li.nav-item").removeClass('active')
-    $(this).addClass("active"); 
-  });
+        $("li.nav-item").click(function () {
+            $("li.nav-item").removeClass('active')
+            $(this).addClass("active");
+        });
+
+        //start countdown
+        startCountdown();
+
+        //initialize animations
+        animateOnScroll('.scroll-animation');
     });
+
+    function startCountdown() {
+        // Set initial time to 21 hours
+        let timeLeft = 21 * 60 * 60 * 1000;
+
+        const timerElement = document.getElementById('serviceTimer');
+
+        // Update timer every second
+        const countdown = setInterval(() => {
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timerElement.textContent = formattedTime;
+
+            // Decrease time by 1 second
+            timeLeft -= 1000;
+
+            // Stop timer when it reaches 0
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                timerElement.textContent = "00:00:00";
+            }
+        }, 1000);
+    }
+
+    function animateOnScroll(selector, options = {}) {
+        const elements = document.querySelectorAll(selector);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animation = entry.target.dataset.animate
+                    entry.target.classList.add('animate__animated', animation);
+
+                    //Remove animation class after animation completes
+                    entry.target.addEventListener('animationend', () => {
+                        entry.target.classList.remove('animate__animated', animation);
+                    }, { once: true });
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: options.threshold || 0,
+            rootMargin: options.rootMargin || '0px'
+        });
+
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
 </script>
