@@ -12,6 +12,104 @@
   color: var(--rock-color--red);
 }
 
+/* Base hidden state for all animations */
+.animate-on-scroll {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Fade In Left */
+.fade-in-left {
+  transform: translateX(-100px);
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade In Right */
+.fade-in-right {
+  transform: translateX(100px);
+}
+
+.fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade In Up */
+.fade-in-up {
+  transform: translateY(100px);
+}
+
+.fade-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bounce In Right */
+.bounce-in-right {
+  transform: translateX(200px) scale(0.3);
+}
+
+.bounce-in-right.animate {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Bounce In Down */
+.bounce-in-down {
+  transform: translateY(-200px) scale(0.3);
+}
+
+.bounce-in-down.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .animate-on-scroll {
+    /* Shorter, smoother animations on mobile */
+    transition-duration: 0.5s;
+  }
+
+  /* Reduce movement distance on mobile */
+  .fade-in-left {
+    transform: translateX(-40px);
+  }
+
+  .fade-in-right {
+    transform: translateX(40px);
+  }
+
+  .fade-in-up {
+    transform: translateY(40px);
+  }
+
+  .bounce-in-right {
+    transform: translateX(60px) scale(0.8);
+  }
+
+  .bounce-in-down {
+    transform: translateY(-60px) scale(0.8);
+  }
+}
+
+/* Performance optimizations */
+.animate-on-scroll {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.animate-on-scroll.animate {
+  will-change: auto;
+}
+
 .rock-bg-red {
   background-color: var(--rock-color--red);
   border: 3px solid var(--rock-color--red);
