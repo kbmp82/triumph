@@ -79,27 +79,26 @@
 
   /* Reduce movement distance on mobile */
   .fade-in-left {
-    transform: translateX(-40px);
+    transform: translateX(-20px);
   }
 
   .fade-in-right {
-    transform: translateX(40px);
+    transform: translateX(20px);
   }
 
   .fade-in-up {
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
 
   .bounce-in-right {
-    transform: translateX(60px) scale(0.8);
+    transform: translateX(30px) scale(0.8);
   }
 
   .bounce-in-down {
-    transform: translateY(-60px) scale(0.8);
+    transform: translateY(-30px) scale(0.8);
   }
 }
 
-/* Performance optimizations */
 .animate-on-scroll {
   will-change: transform, opacity;
   backface-visibility: hidden;
